@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SetListApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+	<title>SetListApp</title>
+	<%= stylesheet_link_tag    'application', media: 'all' %>
+	<%= javascript_include_tag 'application'%>
+	<%= csrf_meta_tags %>
+	<%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
 
 </head>
 <body>
-<%= render "layouts/flash" %>
+	<nav>
+		<div class="nav-wrapper blue-grey ligten-2 bar">
+			<a href="#" class="brand-logo">Set List Maker</a>
+			<span class="navtext hide-on-med-and-down">Logged In As: <%= current_user.name %> <% if @current_org %>
+				of <%= @current_org.name %></p>
+				<% end %></span>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><%= link_to "Home", root_path %></li>
+					<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+					<li><a href="#">Team</a></li>
+					<li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
+				</ul>
+			</div>
+		</nav>
+		<%= render "layouts/flash" %>
 
-<%= yield %>
+		<%= yield %>
 
-</body>
-</html>
+	</body>
+	</html>

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20151104172409) do
     t.string   "length"
     t.text     "lyrics"
     t.integer  "bpm"
+    t.integer  "song_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

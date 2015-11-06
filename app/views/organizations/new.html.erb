@@ -1,2 +1,39 @@
-<h1>Organizations#new</h1>
-<p>Find me in app/views/organizations/new.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col s6 offset-s3">
+			<% if @org.errors.size > 0 %>
+			<div class="errors" >
+				<p>
+					<h3 class="text-center"><%= pluralize(@org.errors.size, "error") %> prohibited account creation:</h3>
+					<ul>
+						<% @org.errors.full_messages.each do |x| %>
+						<li><%= x %></li>
+						<% end %>
+					</ul>
+				</p>
+			</div>
+			<% end %>
+
+			<h3>Create a New Organization</h3>
+			<%= form_for @org do |f| %>
+
+			<div class="input-field">
+				<%= f.text_field :name, class: "validate" %>
+				<%= f.label :name %>
+			</div>
+
+			<div class="field">
+				<%= f.label :avatar, "Select Image" %> <br>
+				<%= f.file_field :avatar %>				
+			</div>	
+			
+			<br>
+
+			<div class="actions">
+				<%= f.submit "Create Organization", class: "btn" %>
+			</div>
+			
+			<% end %>
+		</div>
+	</div>
+</div>

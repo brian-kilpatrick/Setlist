@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  get 'arrangements/new'
+
+  get 'songs/new'
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
   
-  resources :organizations
+  resources :organizations, :songs, :arrangements, :users
 
   root 'organizations#show'
   # The priority is based upon order of creation: first created -> highest priority.

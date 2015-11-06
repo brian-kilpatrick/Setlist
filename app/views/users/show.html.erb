@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12 m6 offset-m3">
+			<div class="card blue-grey darken-1 z-depth-5 hoverable">
+				<div class="card-content white-text">
+					<span class="card-title"><%= @user.name %> </span>
+					<p>Role: <%= @user.role %></p>
+					<p>Email: <%= @user.email %></p>
+					<p>Phone: <%= @user.phone %></p>
+				</div>
+				<div class="card-action">
+					<%= link_to "Contact" %>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>

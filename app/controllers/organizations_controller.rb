@@ -5,11 +5,31 @@ class OrganizationsController < ApplicationController
   end
 
   def new
+  	@org = Organization.new
+  end
+
+  def create
+  	@org = Organization.new(org_params)
+  	if @org.save
+  		current_user.organizations << @org
+  		flash[:message] = "Organization Successfully Created!"
+  		redirect_to root_path
+  	else
+  		flash[:message] = "Something Went Wrong"
+  		render 'new'
+  	end
   end
 
   def edit
   end
 
   def show
+  	
+  end
+
+  private
+
+  def org_params
+  	params.require(:organization).permit(:name, :avatar)
   end
 end
