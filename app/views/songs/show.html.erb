@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12 m6 offset-m3 form-border">
+			<h2><%= @song.name %></h2>
+			 <blockquote>
+		      Key: <%= @song_arrangement.keyof %>
+		      <br>
+		      Length: <%= @song_arrangement.length %>
+		      <br>
+				<% unless @song_arrangement.bpm.nil? %>
+				BPM: <%= @song_arrangement.bpm %>
+				<br>
+				<% end %>
+		    </blockquote>
+			<hr>
+			<h5 class="center-text">Lyrics:</h5>
+			<span><%= @song_arrangement.lyrics.html_safe %></span>
+			<br>
+		</div>
+	</div>
+</div>

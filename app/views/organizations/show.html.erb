@@ -1,47 +1,4 @@
-<div class="container">
-	<div class="row">
-		<div class="col s12 center-align">
 
-			<p>Logged In As: <%= current_user.name %> 
-			<% if @current_org %>
-			of <%= @current_org.name %></p>
-			<% end %>
-		</div>
-	</div>
-	<div class="row main">
-		<div class="col s12 m4 library-header">
-			<ul class="tabs">
-				<li class="tab col s2"><a href="#", class="cyan-text text-darken-3">Songs</a></li>
-				<li class="tab col s2"><a href="#">Prior Set Lists</a></li>
-			</ul>
 
-			<div class="input-field">
-				<%= text_field_tag :q, nil, placeholder: "Search" %>
-			</div>
-			<div class="row">
-				<div class="col s12 library">
-					<ul class="collection">
-						<li class="collection-item">Song 1</li>
-						
-					</ul>
-				</div>
-			</div>	
-		</div>
 
-		<div class="col s12 m8 list">
-			<ul class="tabs">
-				<li class="tab col s2"><a href="#" class="center-align">Build Your Set List Below</a></li>
-			</ul>
-			<ul>
-				<li>One</li>
-				<li>Two</li>
-				<li>fjskndf</li>
-				<li>ksjnf</li>
-				<li>kjsngs</li>
-			</ul>
-		</div>
-	</div>
-</div>
 
-<%= link_to "New Organization", new_organization_path %> <br>
-<%= link_to "New Song", new_song_path %>

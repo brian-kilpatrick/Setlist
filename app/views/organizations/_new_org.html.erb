@@ -1,0 +1,17 @@
+<div class="container full-height">
+	<div class="row full-height">
+		<div class="valign-wrapper full-height">
+			<div class="col s12 m6 offset-m3">
+				<div class="card-panel teal center-align">
+					<%= link_to(new_organization_path, class: "waves-effect waves-light btn-large") do %>
+					<i class="material-icons left">cloud</i>Create a New Organization
+					<% end %>
+					<h5 class="center-align">Or</h5>
+					<div class="input-field">
+						<%= text_field_tag :q, nil, placeholder: "Search For Existing Organization" %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

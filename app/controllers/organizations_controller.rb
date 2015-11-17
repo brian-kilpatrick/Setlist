@@ -2,6 +2,7 @@ class OrganizationsController < ApplicationController
 	before_action :authenticate_user!
 
   def index
+    @setlists = @current_org.setlists
   end
 
   def new
@@ -24,7 +25,7 @@ class OrganizationsController < ApplicationController
   end
 
   def show
-  	
+  
   end
 
   private

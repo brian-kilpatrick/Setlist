@@ -1,0 +1,17 @@
+<nav>
+		<div class="nav-wrapper teal bar">
+			<a href="#" class="brand-logo">Set List Maker</a>
+			<span class="navtext hide-on-med-and-down">Logged In As: 
+				<%= current_user.name %> 
+				<% if @current_org %>
+				<%= content_tag(:span, "of #{@current_org.name}") %>
+				<% end %>
+			</span>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><%= link_to "Home", root_path %></li>
+				<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+				<li><a href="#">Team</a></li>
+				<li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
+			</ul>
+		</div>
+	</nav>

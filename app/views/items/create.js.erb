@@ -1,0 +1,8 @@
+var ready = function() {
+	$(".song-submit").on("ajax:success", function(e) {
+			$(".setlist-ajax").html("<%= j render('setlists/setlist') %> ");
+
+	});
+};
+
+$(document).ready(ready);

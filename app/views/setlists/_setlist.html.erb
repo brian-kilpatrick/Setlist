@@ -1,0 +1,19 @@
+<div class="col s12 m4 offset-m1 list z-depth-3">
+	<ul class="tabs">
+		<li class="tab col s2"><a href="#" class="center-align">Build Your Set List Below</a></li>
+	</ul>
+	<% if @setlist.items.count >=1 %>
+	<ul id="setlist">
+		<% @setlist.items.each do |item| %>
+		<li data-id= "<%= item.id %>" class="center-align list-item">
+			<%= item.position %>. <%= item.arrangement.song.name %>
+			<%= link_to(setlist_item_path(@setlist.id, item.id), remote: true, method: "delete", class: "secondary-content song-delete") do %>
+				Delete
+			<% end %> 
+		</li>
+		<% end %>
+	</ul>
+	<% else %>
+	<p class="center-align">Add Songs From The List On The Left</p>
+	<% end %>
+</div>

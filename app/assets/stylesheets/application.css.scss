@@ -10,49 +10,105 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+  *= require_tree .
  */
 
-@import "materialize/components/color";
-@import "materialize";
+ $primary-color: #D9B611;
+ $secondary-color: #48CFAD;
 
+ @import "materialize/components/color";
+ $tabs-underline-color: $secondary-color; 
+ $tabs-text-color: $secondary-color ;
+ $tabs-bg-color: transparent;
+ $collapsible-header-color: #FAFAFA;
+ $collapsible-border-color: rgba(0, 0, 0, .1);
+ @import "materialize";
 
+ 
 
-html, body, .full-height {
-	height: 100%;
+ html, body {
+ 	height: 100%;
+ 	background: #199f9e;
+ 	background: -webkit-radial-gradient(circle, #1aa3a2, #0b4746);
+ 	background: radial-gradient(circle, #1aa3a2, #0b4746);
+ 	color: $secondary-color;
+ 	font-weight: 300;
+ }
+
+ .full-height {
+ 	height: 100%;
+ }
+
+#nav {
+    margin: 0;
+    padding: 0px;
+
+	li {
+    	float: right;
+	}
+
+	a {
+		display: block;
+		padding: 20px;
+		color: $primary-color;
+	}
+
+	a:hover {
+		background-color: rgba(0, 0, 0, .1);
+	}
 }
 
-.row.full-height {
-	height: 100%;
-	margin: 0;
-}
+ .logo {
+ 	height: 10em;
+ 	background-color: #D9B611;
+ 	border-radius: 0px 50px 0px;
 
-.col > .login {
-	padding: 25px;
-	padding-top: 15px;
-}
+ }
 
-.library-header, .list {
-	height: 30em;
-	padding-top: 20px;
-}
+ .logo-text {
+ 	padding-top: 5px;
+ 	color: white;
+ 	font-weight: 100;
+ 	font-size: 40px;
+ 	user-select: none;
+ }
 
-.library {
-	overflow: auto;
-	height: 21em;
-}  
+ .row.full-height {
+ 	height: 100%;
+ 	margin: 0;
+ }
 
-.container {
-	width: 80%;
-}
+ .col > .login {
+ 	padding: 25px;
+ 	padding-top: 15px;
+ }
 
-.selector {
-	padding-top: 20px;
-	margin-bottom: 0px;
-}
+ .library-header, .list {
+ 	height: 30em;
+ 	padding-top: 20px;
+ 	border-radius: 0px 40px 0px;
+ 	background-color: #FAFAFA;
+ 	border: 10px solid #D9B611;
 
-.main {
+ }
+
+ .library {
+ 	overflow: auto;
+ 	height: 21em;
+
+ }  
+
+ .container {
+ 	width: 80%;
+ }
+
+ .selector {
+ 	padding-top: 20px;
+ 	margin-bottom: 0px;
+ }
+
+ .main {
 	// padding-top: 30px;
 }
 
@@ -60,5 +116,32 @@ html, body, .full-height {
 	padding-left: 20em;
 }
 
+.extra-border {
+	@extend .library-header;
+	border: 10px solid #D9B611;
+	background-color: transparent;
+	height: 20em;
+}
 
+.form-border {
+ 	border-radius: 0px 40px 0px;
+ 	background-color: #FAFAFA;
+ 	border: 10px solid #D9B611;
+ 	color: initial;
+}
 
+.list {
+	position: absolute;
+	top: 200px;
+	right: 200px;
+	overflow: auto;
+}
+
+#editor {
+	height: 150px;
+}
+
+.button {
+	
+
+}

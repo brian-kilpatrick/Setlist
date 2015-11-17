@@ -7,6 +7,7 @@ class CreateArrangements < ActiveRecord::Migration
       t.text :lyrics
       t.integer :bpm
       t.belongs_to :song
+      t.belongs_to :organization
 
       t.timestamps null: false
     end

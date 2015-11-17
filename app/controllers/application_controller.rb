@@ -5,11 +5,16 @@ class ApplicationController < ActionController::Base
   before_action :set_org
 
 
-  private
+private
 
+# How
   def set_org
-  	if user_signed_in?
-  	@current_org = current_user.organizations.first
-  	end
+      if user_signed_in?
+        if current_user.organizations.count >= 1
+         @current_org = current_user.organizations.first
+         session[:organization_id] = @current_org.id
+      end
+    end
   end
+
 end

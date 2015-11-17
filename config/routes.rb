@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
 
-  get 'arrangements/new'
-
-  get 'songs/new'
-
   devise_for :users, :controllers => { registrations: 'registrations' }
   
-  resources :organizations, :songs, :arrangements, :users
+  resources :organizations, shallow: true do
+   resources :setlists, :songs, :users
+  end
 
-  root 'organizations#show'
+  resources :setlists do
+    put :sort, on: :collection
+  resources :items
+  end
+
+
+  root 'organizations#index' 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

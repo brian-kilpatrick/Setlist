@@ -1,46 +1,50 @@
 <div class="container">
-  <div class="row">
-    <div class="col s12 m6 offset-m3">
+	<div class="row">
+		<div class="col s12 m6 offset-m3 form-border">
 			<h4>Create a new song</h4>
-			<%= form_for @song do |f| %>
+			<%= form_for [@current_org, @song] do |f| %>
 
 			<div class="input-field">
-        <%= f.text_field :name, class: "validate" %>
-        <%= f.label :name, class: "active" %>
-      </div>
+				<%= f.text_field :name, class: "validate" %>
+				<%= f.label :name, class: "active" %>
+			</div>
 			
 			<%= f.fields_for :arrangements do |a| %>
-				
-				<div class="input-field">
-	        <%= a.text_field :title, value: "Default Arrangement", class: "validate" %>
-	        <%= a.label :title, class: "active" %>
-	      </div>
 
-	      <div class="input-field">
-	        <%= a.text_field :keyof, class: "validate" %>
-	        <%= a.label :keyof, "Key", class: "active" %>
-	      </div>
+			<div class="input-field">
+				<%= a.text_field :title, value: "Default Arrangement", class: "validate" %>
+				<%= a.label :title, class: "active" %>
+			</div>
 
-	      <div class="input-field">
-	        <%= a.text_field :length, class: "validate" %>
-	        <%= a.label :length, class: "active" %>
-	      </div>
+			<div class="input-field">
+				<%= a.text_field :keyof, class: "validate" %>
+				<%= a.label :keyof, "Key", class: "active" %>
+			</div>
 
-	      <div class="input-field">
-	        <%= a.text_field :bpm, class: "validate" %>
-	        <%= a.label :bpm, class: "active" %>
-	      </div>
+			<div class="input-field">
+				<%= a.text_field :length, class: "validate" %>
+				<%= a.label :length, class: "active" %>
+			</div>
 
-	      <div class="input-field">
-	        <%= a.text_area :lyrics, class: "materialize-textarea validate" %>
-	        <%= a.label :lyrics, class: "active" %>
-	      </div>
+			<div class="input-field">
+				<%= a.text_field :bpm, class: "validate" %>
+				<%= a.label :bpm, class: "active" %>
+			</div>
+			
+			<br>
+			
+			<div class="field">
+				<%= a.label :lyrics, class: "active" %>
+				<%= a.cktext_area :lyrics, class: "validate", id: 'editor' %>
+			</div>
 
 			<% end %>
 			<div class="actions">
-        <%= f.submit "Create Song", class: "btn" %>
-      </div>
-      <% end %>
-    </div>
+				<%= f.submit "Create Song", class: "btn" %>
+			</div>
+			<br>
+			<% end %>
+		</div>
 	</div>
 </div>	
+

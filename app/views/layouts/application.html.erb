@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SetListApp</title>
+	<title>::::SetList</title>
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<%= javascript_include_tag 'application'%>
 	<%= csrf_meta_tags %>
 	<%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+	<script src="//cdn.jsdelivr.net/sortable/latest/Sortable.min.js"></script>
+
 
 </head>
 <body>
-	<nav>
-		<div class="nav-wrapper blue-grey ligten-2 bar">
-			<a href="#" class="brand-logo">Set List Maker</a>
-			<span class="navtext hide-on-med-and-down">Logged In As: <%= current_user.name %> <% if @current_org %>
-				of <%= @current_org.name %></p>
-				<% end %></span>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><%= link_to "Home", root_path %></li>
-					<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-					<li><a href="#">Team</a></li>
+	<div class="row">
+		<div class="col s2 offset-s1 logo">
+			<p class="center-align logo-text">::::SETLIST</p>
+		</div>
+		<div class="col s5 offset-s4 links">			
+			<ul id="nav">
+				<% if user_signed_in? %>
 					<li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
-				</ul>
-			</div>
-		</nav>
-		<%= render "layouts/flash" %>
+					<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+					<li><%= link_to "New Organization", new_organization_path %></li>
 
-		<%= yield %>
+					<li><%= link_to "New Song", new_organization_song_path(@current_org) %></li>
+					<li><%= link_to "Home", root_path %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<%= render "layouts/flash" %>
 
-	</body>
-	</html>
+	<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+var ready = function() {
+	$(".song-delete").on("ajax:success", function(e) {
+		$( "#setlist > li > a" ).click(function() {
+	        $(this).parent( "li" ).slideUp(200);
+	    });
+		$(".setlist-ajax").html("<%= j render('setlists/setlist') %> ");
+	});
+};
+
+$(document).ready(ready);

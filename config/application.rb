@@ -22,9 +22,9 @@ module SetListApp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.to_prepare do
-      Devise::SessionsController.layout "layouts/login_layout"
-      Devise::RegistrationsController.layout "layouts/login_layout"  
-    end
+    # config.to_prepare do
+    #   Devise::SessionsController.layout "layouts/application"
+    #   Devise::RegistrationsController.layout "layouts/application"  
+    # end
   end
 end
