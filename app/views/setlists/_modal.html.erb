@@ -1,0 +1,34 @@
+<div class="modal" id="setlist-modal">
+	<div class="modal-content">
+		<%= form_for @setlist do |f| %>
+
+		<div class="input-field">
+			<%= f.text_field :name, autocomplete: 'off', class: 'validate' %>
+			<%= f.label :name, 'Setlist Name' %>
+		</div>
+
+		<div class="input-field">
+			<%= f.text_field :performance_date, autocomplete: 'off', class: 'datepicker' %>
+			<%= f.label :performance_date, "Performance Date" %>
+		</div>
+
+		<div class="input-field">
+			<%= f.text_field :performance_time, autocomplete: 'off', class: 'timepicker' %>
+			<%= f.label :performance_time, "Performance Time" %>
+		</div>
+
+		<div class="input-field">
+			<%= f.text_field :rehearsal_date, autocomplete: 'off', class: 'datepicker' %>
+			<%= f.label :rehearsal_date, "Rehearsal Date" %>
+		</div>
+
+		<div class="input-field">
+			<%= f.text_field :rehearsal_time, autocomplete: 'off', class: 'timepicker' %>
+			<%= f.label :rehearsal_time, "Rehearsal Time" %>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<%= f.submit "Edit Set List", class: "btn" %>
+		<% end %>
+	</div>
+</div>

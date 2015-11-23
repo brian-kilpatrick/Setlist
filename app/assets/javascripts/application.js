@@ -67,6 +67,19 @@ set_positions = function(){
         	data: { order: updated_order }
         });
      });
+
+     // Modal-Trigger
+     $('.modal-trigger').leanModal();
+
+     // Datepicker
+     $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 5, // Creates a dropdown of 5 years to control year
+        format: 'mmmm d, yyyy'
+      });
+
+     $('.timepicker').pickatime()
+
 };
 
 $(document).ready(ready);

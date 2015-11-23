@@ -1,19 +1,38 @@
 <% if current_user.organizations.count == 0 %>
-	<%= render "new_org" %>
+<%= render "new_org" %>
+<% else %>
+<div class="row full-height">
+	<div class="col m3 full-height setlists">
+		<p class="center-align text-header">Your Set Lists</p>
+		<hr>
+		<% if @current_org.setlists.count >	 0 %>
+			<ul class="collapsible">
+				<% @current_org.setlists.order(:performance_date).each do |setlist| %>
+				<li>
+					<div class="collapsible-header">
+						<%= setlist.name %>
+					</div>
+					<div class="collapsible-body">
+						<% setlist.items.each do |item| %>
+						<%= item.arrangement.song.name %>
+						<% end %>
+					</div>
+				</li>
+				<% end %>
+			</ul>
+		<% else %>
+			<p>No Setlist Added</p>
+		<% end %>
+	</div>
+	<div class="col m9 full-height">
+		<p class="center-align text-header">Welcome, <%=current_user.name %> </p>
+		<p class="center-align"> <i>Organization: <br> <%=@current_org.name %></i> </p>
+		<% if @current_org %>
+			<%= link_to(organization_setlists_path(@current_org), class: "waves-effect waves-light btn-large", method:"post") do %>
+			<i class="material-icons left">cloud</i>Create a New Setlist!
+			<% end %>
+		<% end %>
+	</div>
+</div> 
 <% end %>
 
-
-<div class="row full-height">
-		<div class="col m3 full-height setlists grey lighten-2">
-			<h4 class="center-align"><u>Your Set Lists</u></h4>
-			<ul class="collapsible">
-				<li class="">Hey</li>
-			</ul>
-		</div>
-		<div class="col m9 full-height">
-			<h4 class="center-align">Dashboard Stuff</h4>
-			<%= link_to(organization_setlists_path(@current_org), class: "waves-effect waves-light btn-large", method:"post") do %>
-				<i class="material-icons left">cloud</i>Create a New Setlist!
-				<% end %>
-		</div>
-</div> 

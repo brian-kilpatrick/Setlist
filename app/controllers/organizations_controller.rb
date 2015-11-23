@@ -2,7 +2,9 @@ class OrganizationsController < ApplicationController
 	before_action :authenticate_user!
 
   def index
-    @setlists = @current_org.setlists
+    if @current_org
+      @setlists = @current_org.setlists
+    end
   end
 
   def new

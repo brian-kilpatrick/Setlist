@@ -10,6 +10,7 @@ class SetlistsController < ApplicationController
 	end
 
 	def show
+		@setlist = Setlist.find(params[:id])
 	end
 
 	def edit
@@ -21,10 +22,16 @@ class SetlistsController < ApplicationController
 	end
 
 	def update
-		params[:order].each do |key,value|
-			Item.find(value[:id]).update_attribute(:position,value[:position])
+		# @setlist = Setlist.find(params[:id])
+		# @setlist.update_attributes(setlist_params)
+		if !params[:order].nil?
+			params[:order].each do |key,value|
+				Item.find(value[:id]).update_attribute(:position,value[:position])
+			end
+			render :nothing => true
+		else
+			redirect_to edit_setlist_path(@setlist) 
 		end
-		render :nothing => true
 	end
 
 	def destroy
@@ -32,5 +39,11 @@ class SetlistsController < ApplicationController
 		@setlist.destroy
 		flash[:message] = "Setlist Deleted!"
 		redirect_to root_path
+	end
+
+	private
+
+	def setlist_params
+		params.require(:setlist).permit(:name,:performance_date, :performance_time, :rehearsal_date, :rehearsal_time)
 	end
 end

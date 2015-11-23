@@ -1,7 +1,8 @@
 <div class="container">
 	<div class="row">
-		<div class="col s12 m6 offset-m3 form-border">
+		<div class="col s12 m8 offset-m2 form-border">
 			<h2><%= @song.name %></h2>
+			<i><%= @song.artist %></i>
 			 <blockquote>
 		      Key: <%= @song_arrangement.keyof %>
 		      <br>
@@ -14,7 +15,7 @@
 		    </blockquote>
 			<hr>
 			<h5 class="center-text">Lyrics:</h5>
-			<span><%= @song_arrangement.lyrics.html_safe %></span>
+			<span class="lyrics"><%= @song_arrangement.lyrics.html_safe %></span>
 			<br>
 		</div>
 	</div>

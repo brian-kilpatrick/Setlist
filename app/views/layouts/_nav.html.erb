@@ -1,17 +1,18 @@
-<nav>
-		<div class="nav-wrapper teal bar">
-			<a href="#" class="brand-logo">Set List Maker</a>
-			<span class="navtext hide-on-med-and-down">Logged In As: 
-				<%= current_user.name %> 
-				<% if @current_org %>
-				<%= content_tag(:span, "of #{@current_org.name}") %>
-				<% end %>
-			</span>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><%= link_to "Home", root_path %></li>
-				<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-				<li><a href="#">Team</a></li>
-				<li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
-			</ul>
-		</div>
-	</nav>
+<div class="row">
+	<div class="col s2 offset-s1 logo">
+		<p class="center-align logo-text">::::SETLIST</p>
+	</div>
+	<div class="col s5 offset-s4 links">			
+		<ul id="nav">
+			<% if user_signed_in? %>
+			<li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
+			<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+			<li><%= link_to "New Organization", new_organization_path %></li>
+			<% if @current_org %>
+			<li><%= link_to "New Song", new_organization_song_path(@current_org) %></li>
+			<% end %>
+			<li><%= link_to "Home", root_path %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>

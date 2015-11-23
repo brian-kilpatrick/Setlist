@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109161912) do
+ActiveRecord::Schema.define(version: 20151118171119) do
 
   create_table "arrangements", force: :cascade do |t|
     t.string   "title"
@@ -70,12 +70,14 @@ ActiveRecord::Schema.define(version: 20151109161912) do
 
   create_table "setlists", force: :cascade do |t|
     t.string   "name"
-    t.datetime "date"
-    t.datetime "rehearsal"
+    t.date     "performance_date"
+    t.time     "performance_time"
+    t.date     "rehearsal_date"
+    t.time     "rehearsal_time"
     t.integer  "editor"
     t.integer  "organization_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "setlists", ["organization_id"], name: "index_setlists_on_organization_id"
@@ -86,6 +88,7 @@ ActiveRecord::Schema.define(version: 20151109161912) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "organization_id"
+    t.string   "artist"
   end
 
   add_index "songs", ["organization_id"], name: "index_songs_on_organization_id"

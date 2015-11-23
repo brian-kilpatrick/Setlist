@@ -1,7 +1,7 @@
 <!-- Flash Messages -->
 
 	<% flash.each do |name, msg| %>
-	<%= javascript_tag "Materialize.toast('#{msg}', 10000);" %>
+	<%= javascript_tag "Materialize.toast('#{msg}', 5000);" %>
 	<% end %>
 
 <!-- End Flash Messages -->

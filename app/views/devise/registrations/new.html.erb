@@ -1,10 +1,8 @@
-<%= render 'devise/sessions/login_bg' %>
-
 <div class="container full-height">
   <div class="row full-height">
     <div class="valign-wrapper full-height">
       <div class="col s10 offset-s1 m6 offset-m3"> 
-        <div class="card panel login hoverable z-depth-5">
+        <div class="card panel login hoverable z-depth-5 form-border">
 
           <h2>Sign up</h2>
 
@@ -32,8 +30,8 @@
       </div>
 
       <div class="input-field">
-            <%= f.label :password, "Password: 8 Characters Minimum" %>
             <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.label :password, "Password: 8 Characters Minimum" %>
           </div>
 
           <div class="input-field">
