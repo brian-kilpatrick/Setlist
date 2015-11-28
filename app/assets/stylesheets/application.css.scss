@@ -95,7 +95,7 @@
 
  .library {
  	overflow: auto;
- 	height: 21em;
+ 	height: 25em;
 
  }  
 
@@ -155,5 +155,21 @@
 }
 
 .setlists {
-	box-shadow: 10px 10px 50px;
+	box-shadow: 10px 10px 50px black;
+}
+
+.newlist {
+	position: relative;
+	left: 65px;
+}
+
+.collapsible-body p {
+
+	padding: 5px 10px;
+}
+
+// to center "Add Song" link
+.song-submit {
+	position: relative;
+	right: 33%;
 }

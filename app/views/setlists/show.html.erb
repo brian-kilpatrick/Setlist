@@ -3,6 +3,7 @@
 		<div class="col s10 offset-s1 form-border">
 			<h2><%= @setlist.name %></h2>
 			<hr>
+			<%= link_to "Edit Setlist", edit_setlist_path(@setlist) %>
 			<% @setlist.items.each do |item| %>
 			<input type="checkbox" class="filled-in" id="filled-in-box"/>
 			<p class="text-header center-align setlist-item"><%= item.arrangement.song.name %></p>
