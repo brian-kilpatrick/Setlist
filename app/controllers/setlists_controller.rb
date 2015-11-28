@@ -11,11 +11,11 @@ class SetlistsController < ApplicationController
 	end
 
 	def show
-	
+		flash.now[:message] = "Tap song titles to mark them as done!"
 	end
 
 	def edit
-	
+		
 	end
 
 	def sort

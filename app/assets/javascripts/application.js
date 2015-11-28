@@ -80,6 +80,10 @@ set_positions = function(){
 
      $('.timepicker').pickatime()
 
+     $(".setlist-item").click(function() {
+         $(this).toggleClass('stroked');
+     });
+
 };
 
 $(document).ready(ready);

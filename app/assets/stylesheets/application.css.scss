@@ -173,3 +173,30 @@
 	position: relative;
 	right: 33%;
 }
+
+// Setlist Show Page Transition
+.setlist-item {
+	text-align: center;
+	-webkit-transition: .5s ease-in-out;
+}
+
+.stroked { 
+	text-decoration: line-through;
+	-webkit-transform: translateX(10em); 
+}
+
+
+
+hr.style1 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+hr.style2 {
+	border: none;
+	height: 5px;
+	background-color: black;
+	border-radius: 100px;
+}
+

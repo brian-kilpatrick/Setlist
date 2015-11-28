@@ -23,10 +23,12 @@
 								<%= setlist.name %>
 							</div>
 							<div class="collapsible-body">
+								<p> <%= link_to "Show Setlist", setlist_path(setlist) %></p> <hr class="style1">
 								<% setlist.items.each do |item| %>
 								<p> <%= item.arrangement.song.name %></p>
 								<% end %>
-								<p> <%= link_to "Show Setlist", setlist_path(setlist) %></p><p><%= link_to "Edit Setlist", edit_setlist_path(setlist) %></p>
+								<hr class="style1">
+								<p><%= link_to "Edit Setlist", edit_setlist_path(setlist) %></p>
 							</div>
 						</li>
 						<% end %>
